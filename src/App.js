@@ -18,9 +18,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          {this.todoItems.map((item, index) => (
-            <Todoitem key={index} item={item} />
-          ))}
+          {this.todoItems.length > 0 &&
+            this.todoItems.map((item, index) => (
+              <Todoitem key={index} item={item} />
+            ))}
+          {this.todoItems.length == 0 && <div>Nothing here</div>}
         </header>{" "}
       </div>
     );
